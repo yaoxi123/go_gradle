@@ -1,0 +1,59 @@
+# gogradle     
+1、拷贝gradle目录、gradlew文件、gradlew.bat到构建的Go语言项目目录下
+https://github.com/gogradle/gogradle
+ typora工具
+
+2、Go语言项目下新建build.gradle构建脚本
+内容：
+plugins {
+    id 'com.github.blindpirate.gogradle' version '0.11.4'
+}
+
+golang {
+    packagePath = 'github.com/your/package' // 欲构建项目的go import path，注意不是本地目录的路径！
+}
+
+buildscript {
+    dependencies {
+        classpath files('./gogradle-0.11.4-all.jar')
+    }
+}
+
+apply plugin: 'com.github.blindpirate.gogradle'
+
+golang {
+    packagePath = 'github.com/yaoxi123/go_gradle.git' // 欲构建项目的path，不是项目的磁盘路径！
+}
+
+goBuild {
+    // 交叉编译的输出选项，注意，要求go 1.5+
+    targetPlatform = ['windows-amd64', 'linux-amd64', 'linux-386']
+
+    // 输出文件的路径，可以是绝对路径（相对于项目目录）或者相对路径
+    // 其中的${}占位符会在交叉编译时被渲染
+    outputLocation = './.gogradle/${GOOS}_${GOARCH}_${PROJECT_NAME}${GOEXE}'
+}
+
+# Gogradle插件 gogradle-0.11.4-all.jar
+将构建脚本改为
+build.gradle:
+
+buildscript {
+    dependencies {
+        classpath files('<path to downloaded jar>')
+    }
+}
+
+apply plugin: 'com.github.blindpirate.gogradle'
+
+golang {
+    packagePath = 'github.com/your/package' // 欲构建项目的path，不是项目的磁盘路径！
+}
+
+# 解析依赖并将其安装到vendor
+进入项目目录，运行
+
+./gradlew goVendor # *nix
+
+gradlew goVendor # Windows
+
