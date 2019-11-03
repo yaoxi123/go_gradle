@@ -1,0 +1,77 @@
+yx@mzdwyaoxi MINGW64 ~/go/src/go_gradle (master)
+$ ./gradlew goBuild -i
+Initialized native services in: C:\Users\yx\.gradle\native
+Removing 1 daemon stop events from registry
+Starting a Gradle Daemon (subsequent builds will be faster)
+Starting process 'Gradle build daemon'. Working directory: C:\Users\yx\.gradle\daemon\5.2.1 Command: F:\java\bin\java.exe -XX:MaxMetaspaceSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xmx512m -Dfile.encoding=GBK -Duser.country=CN -Duser.language=zh -Duser.variant -cp C:\Users\yx\.gradle\wrapper\dists\gradle-5.2.1-bin\9lc4nzslqh3ep7ml2tp68fk8s\gradle-5.2.1\lib\gradle-launcher-5.2.1.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 5.2.1
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 3.747 secs.
+The client will now receive all logging from the daemon (pid: 2304). The daemon log file: C:\Users\yx\.gradle\daemon\5.2.1\daemon-2304.out.log
+Starting build in new daemon [memory: 477.6 MB]
+Using 4 worker leases.
+Starting Build
+Settings evaluated using settings file 'C:\Users\yx\go\src\go_gradle\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\yx\go\src\go_gradle\build.gradle'.
+Included projects: [root project 'go_gradle']
+
+> Configure project :
+Evaluating root project 'go_gradle' using build file 'C:\Users\yx\go\src\go_gradle\build.gradle'.
+Found go 1.13.4 in F:\Go\bin\go.exe, use it.
+Ignore packages globally: appengine,a,gen,shared,common,thrifttest,appengine_internal,thrift,tutorial
+All projects evaluated.
+Selected primary task 'goBuild' from project :
+Tasks to be executed: [task ':goPrepare', task ':resolveBuildDependencies', task ':installDependencies', task ':buildLinux386', task ':buildLinuxAmd64', task ':buildWindowsAmd64', task ':goBuild']
+:goPrepare (Thread[Daemon worker,5,main]) started.
+
+> Task :goPrepare
+Task ':goPrepare' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+Use project GOPATH: C:/Users/yx/go/src/go_gradle/.gogradle/project_gopath
+:goPrepare (Thread[Daemon worker,5,main]) completed. Took 0.124 secs.
+:resolveBuildDependencies (Thread[Daemon worker,5,main]) started.
+
+> Task :resolveBuildDependencies UP-TO-DATE
+Skipping task ':resolveBuildDependencies' as it is up-to-date.
+:resolveBuildDependencies (Thread[Daemon worker,5,main]) completed. Took 0.05 secs.
+:installDependencies (Thread[Daemon worker,5,main]) started.
+
+> Task :installDependencies
+Task ':installDependencies' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+:installDependencies (Thread[Daemon worker,5,main]) completed. Took 0.12 secs.
+:buildLinux386 (Thread[Daemon worker,5,main]) started.
+
+> Task :buildLinux386 UP-TO-DATE
+Skipping task ':buildLinux386' as it is up-to-date.
+:buildLinux386 (Thread[Daemon worker,5,main]) completed. Took 0.024 secs.
+:buildLinuxAmd64 (Thread[Daemon worker,5,main]) started.
+
+> Task :buildLinuxAmd64 UP-TO-DATE
+Skipping task ':buildLinuxAmd64' as it is up-to-date.
+:buildLinuxAmd64 (Thread[Daemon worker,5,main]) completed. Took 0.024 secs.
+:buildWindowsAmd64 (Thread[Daemon worker,5,main]) started.
+
+> Task :buildWindowsAmd64 UP-TO-DATE
+Skipping task ':buildWindowsAmd64' as it is up-to-date.
+:buildWindowsAmd64 (Thread[Daemon worker,5,main]) completed. Took 0.02 secs.
+:goBuild (Thread[Daemon worker,5,main]) started.
+
+> Task :goBuild
+Task ':goBuild' is not up-to-date because:
+  Task has not declared any outputs despite executing actions.
+:goBuild (Thread[Daemon worker,5,main]) completed. Took 0.002 secs.
+
+BUILD SUCCESSFUL in 15s
+7 actionable tasks: 3 executed, 4 up-to-date
+
+yx@mzdwyaoxi MINGW64 ~/go/src/go_gradle (master)
+$ ./gradlew goBuild
+
+> Configure project :
+Found go 1.13.4 in F:\Go\bin\go.exe, use it.
+
+> Task :goPrepare
+Use project GOPATH: C:/Users/yx/go/src/go_gradle/.gogradle/project_gopath
+
+BUILD SUCCESSFUL in 4s
+7 actionable tasks: 3 executed, 4 up-to-date
